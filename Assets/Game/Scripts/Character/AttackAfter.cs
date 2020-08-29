@@ -6,11 +6,12 @@ using UnityEngine;
 public class AttackAfter : StateMachineBehaviour
 {
     private IMoveVelocity _moveVelocity;
+    private IAattack _attack;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_moveVelocity == null)
-            _moveVelocity = animator.GetComponentInParent<IMoveVelocity>();
+        if (_moveVelocity == null) _moveVelocity = animator.GetComponentInParent<IMoveVelocity>();
+        if (_attack == null) _attack = animator.GetComponentInParent<IAattack>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,6 +24,7 @@ public class AttackAfter : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _moveVelocity.Enable();
+        _attack.Enable();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

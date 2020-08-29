@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FGJ2020_Team3.Character
 {
-    public class CharacterAttack : MonoBehaviour
+    public class CharacterAttack : MonoBehaviour , IAattack
     {
         private enum State
         {
@@ -38,6 +38,7 @@ namespace FGJ2020_Team3.Character
 
         private void Attack()
         {
+            Disable();
             SetStateAttacking();
             var     isUp      = _moveTransformVelocity.IsUp;
             Vector3 v         = isUp ? Vector3.up * 5 : Vector3.zero;
@@ -77,6 +78,16 @@ namespace FGJ2020_Team3.Character
         {
             state = State.Normal;
             GetComponent<IMoveVelocity>().Enable();
+        }
+
+        public void Disable()
+        {
+            this.enabled = false;
+        }
+
+        public void Enable()
+        {
+            this.enabled = true;
         }
     }
 }
