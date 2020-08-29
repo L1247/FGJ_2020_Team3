@@ -7221,6 +7221,22 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6171777392579965695, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3832602b370af8b4aa874500426b058f, type: 3}
+    - target: {fileID: 6171777392579965695, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171777392579965695, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171777392579965695, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9042922484977506432, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
       propertyPath: m_Enabled
       value: 1
