@@ -9,6 +9,7 @@ namespace FGJ2020_Team3.Character
     public class MoveTransformVelocity : MonoBehaviour , IMoveVelocity
     {
         [SerializeField] private float moveSpeed = 3;
+        [SerializeField] public  bool  IsUp;
 
         public  IObservable<bool> GetDirectionChange => OnDirectionChange;
         private Subject<bool>     OnDirectionChange = new Subject<bool>();
@@ -42,6 +43,7 @@ namespace FGJ2020_Team3.Character
             {
                 var isUp = vertical > 0;
                 OnDirectionChange.OnNext(isUp);
+                IsUp = isUp;
             }
 
             _transform.position += moveVector;

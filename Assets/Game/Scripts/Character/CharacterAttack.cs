@@ -7,16 +7,22 @@ namespace FGJ2020_Team3.Character
 {
     public class CharacterAttack : MonoBehaviour
     {
-        private enum State {
-            Normal,
+        private enum State
+        {
+            Normal ,
             Attacking
         }
-        private Transform _transform;
-        private State     state;
+
+        private Transform             _transform;
+        private State                 state;
+        private MoveTransformVelocity _moveTransformVelocity;
+        private Character_Base        _characterBase;
 
         private void Awake()
         {
             SetStateNormal();
+            _moveTransformVelocity = GetComponent<MoveTransformVelocity>();
+            _characterBase         = GetComponent<Character_Base>();
         }
 
         private void Start()
@@ -37,23 +43,39 @@ namespace FGJ2020_Team3.Character
         {
             SetStateAttacking();
             Vector3 attackDir = (UtilsClass.GetMouseWorldPosition() - GetPosition()).normalized;
-            GameObject swordSlashTransform =
+            var isUp = _moveTransformVelocity.IsUp;
+            Transform swordSlashTransform =
                 Instantiate(GameAssets.Instance.pfSwordSlash ,
-                            GetPosition() + attackDir *1 ,
-                            Quaternion.Euler(0 , 0 , UtilsClass.GetAngleFromVector(attackDir)));
+                            GetPosition() + attackDir * 1 ,
+                            Quaternion.Euler(0 , 0 , UtilsClass.GetAngleFromVector(attackDir))).transform;
+            var localScale = swordSlashTransform.localScale;
+
+            if (!isUp) // front
+            {
+                _characterBase.SetTrigger("Atk_Front");
+                localScale.y = -1;
+            }
+            else
+            {
+                _characterBase.SetTrigger("Atk_Back");
+            }
+
+            swordSlashTransform.localScale = localScale;
         }
 
         private Vector3 GetPosition()
         {
             return _transform.position;
         }
-        
-        private void SetStateAttacking() {
+
+        private void SetStateAttacking()
+        {
             state = State.Attacking;
             GetComponent<IMoveVelocity>().Disable();
         }
 
-        private void SetStateNormal() {
+        private void SetStateNormal()
+        {
             state = State.Normal;
             GetComponent<IMoveVelocity>().Enable();
         }

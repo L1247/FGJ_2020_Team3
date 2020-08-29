@@ -23,5 +23,10 @@ namespace FGJ2020_Team3.Character
         {
             _animator.SetBool("TowardBack" , isUp);
         }
+
+        public void SetTrigger(string name)
+        {
+            _animator.SetTrigger(name);
+        }
     }
 }
