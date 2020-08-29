@@ -32,22 +32,21 @@ namespace FGJ2020_Team3.Character
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log($"Click");
+            if (Input.GetMouseButtonDown(0)) 
                 Attack();
-            }
         }
 
         private void Attack()
         {
             SetStateAttacking();
-            Vector3 attackDir = (UtilsClass.GetMouseWorldPosition() - GetPosition()).normalized;
-            var isUp = _moveTransformVelocity.IsUp;
+            var     isUp      = _moveTransformVelocity.IsUp;
+            Vector3 v         = isUp ? Vector3.up : Vector3.down;
+            Vector3 attackDir = (_transform.position + v/*UtilsClass.GetMouseWorldPosition()*/ - GetPosition()).normalized;
+            float   angle     = isUp ? 90f : -90f;
             Transform swordSlashTransform =
                 Instantiate(GameAssets.Instance.pfSwordSlash ,
-                            GetPosition() + attackDir * 1 ,
-                            Quaternion.Euler(0 , 0 , UtilsClass.GetAngleFromVector(attackDir))).transform;
+                            GetPosition() + attackDir * 1.3f ,
+                            Quaternion.Euler(0 , 0 , angle /*UtilsClass.GetAngleFromVector(attackDir)*/)).transform;
             var localScale = swordSlashTransform.localScale;
 
             if (!isUp) // front

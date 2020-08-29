@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  IsUp: 0
 --- !u!1 &6171777392579965693
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ SpriteRenderer:
   m_SortingLayerID: 263941485
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3832602b370af8b4aa874500426b058f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98aaca7ce8803734b804d39da61d5e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
