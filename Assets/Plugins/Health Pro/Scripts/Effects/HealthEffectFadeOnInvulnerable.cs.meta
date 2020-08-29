@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9542813d79439fd4b901229310e108f0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - entityRenderer: {instanceID: 0}
+  - invisibilityShader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

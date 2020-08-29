@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 092b73d52f72ab04189757a1a6d88da9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - screenFlash: {fileID: 1716832173034976, guid: 82191b1ee0b6c844fb2583bae15adf78,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

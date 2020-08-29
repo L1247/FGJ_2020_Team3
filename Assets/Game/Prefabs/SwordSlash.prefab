@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3020290117126257081}
   - component: {fileID: 3020290117126257078}
   - component: {fileID: 3020290117126257079}
+  - component: {fileID: 674926336}
+  - component: {fileID: 674926337}
   m_Layer: 0
   m_Name: SwordSlash
   m_TagString: Untagged
@@ -102,3 +104,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &674926336
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020290117126257076}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.23}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.22, y: 1.37}
+  m_EdgeRadius: 0
+--- !u!114 &674926337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020290117126257076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2482e47bf54ec44f9faf77d4fc679af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 0
+  amount: 10
+  applyEffectOncePerEntity: 0
+  applyEffectOnce: 0
+  applyContinuousEffect: 0
+  continuousEffectTickRate: 0.5
+  autoDeactivate: 0
+  autoDeactivationTime: 0
+  deactivateOnEffect: 1
+  deactivateEffectTime: 0
+  deactivateObjectTime: 0
+  owner: {fileID: 0}
+  affectOwner: 1
+  onlyAffectTags: 0
+  affectableTags: []
