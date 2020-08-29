@@ -3,7 +3,7 @@ using TransformService;
 using UniRx;
 using UnityEngine;
 
-namespace FGJ2020_Team3
+namespace FGJ2020_Team3.Character
 {
     public class Character : MonoBehaviour
     {
