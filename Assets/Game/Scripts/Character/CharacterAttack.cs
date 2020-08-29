@@ -40,12 +40,12 @@ namespace FGJ2020_Team3.Character
         {
             SetStateAttacking();
             var     isUp      = _moveTransformVelocity.IsUp;
-            Vector3 v         = isUp ? Vector3.up : Vector3.down;
+            Vector3 v         = isUp ? Vector3.up * 5 : Vector3.zero;
             Vector3 attackDir = (_transform.position + v/*UtilsClass.GetMouseWorldPosition()*/ - GetPosition()).normalized;
             float   angle     = isUp ? 90f : -90f;
             Transform swordSlashTransform =
                 Instantiate(GameAssets.Instance.pfSwordSlash ,
-                            GetPosition() + attackDir * 1.3f ,
+                            GetPosition() + attackDir * 2f ,
                             Quaternion.Euler(0 , 0 , angle /*UtilsClass.GetAngleFromVector(attackDir)*/)).transform;
             var localScale = swordSlashTransform.localScale;
 
