@@ -1,10 +1,15 @@
+using System;
 using TransformService;
+using UniRx;
 using UnityEngine;
 
 namespace FGJ2020_Team3
 {
     public class Character : MonoBehaviour
     {
+        public  IObservable<bool> GetDirectionChange => OnDirectionChange; 
+        private Subject<bool>     OnDirectionChange = new Subject<bool>();
+        
         [SerializeField] private float             moveSpeed = 3;
         private                  UnityInputService _unityInputService;
         private                  Movement          _movement;
@@ -20,10 +25,15 @@ namespace FGJ2020_Team3
 
         private void Update()
         {
+            var vertical = _unityInputService.GetVertical();
             var moveVector = 
                 _movement.TwoDCalculateWithoutDirection(_unityInputService.GetHorizontal() ,
-                                                           _unityInputService.GetVertical() ,
+                                                           vertical ,
                                                            _unityInputService.GetDeltaTime());
+            if (vertical != 0)
+            {
+                OnDirectionChange.OnNext();
+            }
             _transform.position += moveVector;
         }
     }
