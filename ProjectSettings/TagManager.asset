@@ -44,9 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Boss
+    uniqueID: 798608187
+    locked: 0
   - name: Character
     uniqueID: 263941485
     locked: 0
   - name: Effect
     uniqueID: 1781141931
+    locked: 0
+  - name: Text
+    uniqueID: 3697858655
     locked: 0
