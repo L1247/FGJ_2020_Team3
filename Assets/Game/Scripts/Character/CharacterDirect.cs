@@ -9,7 +9,7 @@ namespace FGJ2020_Team3.Character
         [SerializeField] private Animator       _animator;
         private void Start()
         {
-            GetComponent<Character>().GetDirectionChange
+            GetComponent<Character_Base>().GetDirectionChange
                                      .Subscribe(isUp => ChangeDirection(isUp))
                                      .AddTo(gameObject);
         }
