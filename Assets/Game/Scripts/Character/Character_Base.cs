@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FGJ2020_Team3.Character
 {
-    public class Character : MonoBehaviour
+    public class Character_Base : MonoBehaviour
     {
         public  IObservable<bool> GetDirectionChange => OnDirectionChange; 
         private Subject<bool>     OnDirectionChange = new Subject<bool>();

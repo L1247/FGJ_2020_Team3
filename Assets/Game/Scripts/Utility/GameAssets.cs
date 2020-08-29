@@ -12,5 +12,7 @@ namespace FGJ2020_Team3.Utility
                 return _instance;
             }
         }
+
+        public GameObject pfSwordSlash;
     }
 }
