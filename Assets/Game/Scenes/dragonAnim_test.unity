@@ -956,7 +956,7 @@ MonoBehaviour:
   startWaitMax: 0
   fadeDuration: 0.5
   renderers:
-  - {fileID: 0}
+  - {fileID: 675278972}
   shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
   property: _Color
 --- !u!114 &675278979
