@@ -6,6 +6,8 @@ namespace FGJ2020_Team3
 {
     public class CharacterDirect : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Sprite         UpSprite , DownSprite;
         private void Start()
         {
             GetComponent<Character>().GetDirectionChange
@@ -15,7 +17,7 @@ namespace FGJ2020_Team3
 
         private void ChangeDirection(bool isUp)
         {
-            
+            _spriteRenderer.sprite = isUp ? UpSprite : DownSprite;
         }
     }
 }

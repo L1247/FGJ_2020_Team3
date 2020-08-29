@@ -32,7 +32,8 @@ namespace FGJ2020_Team3
                                                            _unityInputService.GetDeltaTime());
             if (vertical != 0)
             {
-                OnDirectionChange.OnNext();
+                var isUp = vertical >0;
+                OnDirectionChange.OnNext(isUp);
             }
             _transform.position += moveVector;
         }
