@@ -7,35 +7,21 @@ namespace FGJ2020_Team3.Character
 {
     public class Character_Base : MonoBehaviour
     {
-        public  IObservable<bool> GetDirectionChange => OnDirectionChange; 
-        private Subject<bool>     OnDirectionChange = new Subject<bool>();
-        
-        [SerializeField] private float             moveSpeed = 3;
-        private                  UnityInputService _unityInputService;
-        private                  Movement          _movement;
-        private                  Transform         _transform;
-        
+        private                  Transform _transform;
+        [SerializeField] private Animator  _animator;
 
         private void Start()
         {
-            _unityInputService = new UnityInputService();
-            _movement          = new Movement(moveSpeed);
-            _transform         = transform;
+            _transform = transform;
+            GetComponent<MoveTransformVelocity>()
+                .GetDirectionChange
+                .Subscribe(isUp => ChangeDirection(isUp))
+                .AddTo(gameObject);
         }
 
-        private void Update()
+        private void ChangeDirection(bool isUp)
         {
-            var vertical = _unityInputService.GetVertical();
-            var moveVector = 
-                _movement.TwoDCalculateWithoutDirection(_unityInputService.GetHorizontal() ,
-                                                           vertical ,
-                                                           _unityInputService.GetDeltaTime());
-            if (vertical != 0)
-            {
-                var isUp = vertical >0;
-                OnDirectionChange.OnNext(isUp);
-            }
-            _transform.position += moveVector;
+            _animator.SetBool("TowardBack" , isUp);
         }
     }
 }
