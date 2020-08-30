@@ -17,17 +17,9 @@ namespace Game.Scripts.Utility.TextUtility
         Text   txt;
         string story;
 
-        void Awake()
-        {
-            txt = GetComponent<Text>();
-            // story    = txt.text;
-            txt.text = "";
-
-            // TODO: add optional delay when to start
-        }
-
         public void CallNextEffect(string context)
         {
+            if (txt == null) txt = GetComponent<Text>();
             txt.text = "";
             story    = context;
             StopCoroutine("PlayText");
@@ -41,6 +33,7 @@ namespace Game.Scripts.Utility.TextUtility
                 txt.text += c;
                 yield return new WaitForSeconds(typeSpeed);
             }
+
             OnTypeEnd.OnNext(Unit.Default);
         }
     }

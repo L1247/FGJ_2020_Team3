@@ -10,22 +10,25 @@ namespace FGJ2020_Team3.DialogSystem
     {
         [SerializeField] private List<Dialog>     _dialogs;
         [SerializeField] private UITextTypeWriter _textTypeWriter;
-
-        private int _diglogIndex;
+        [SerializeField] private UITextTypeWriter _otherTextTypeWriter;
+        [SerializeField] private Canvas           _canvas;
+        
+        private                  int              _diglogIndex;
 
         private void Start()
         {
-            _textTypeWriter.GetTypeEnd
-                           .Subscribe(unit =>
-                           {
-                               if(_diglogIndex < _dialogs.Count)
-                                   CallNext();
-                           });
-            CallNext();
+            _otherTextTypeWriter.GetTypeEnd
+                                .Subscribe(unit =>
+                                {
+                                    if(_diglogIndex < _dialogs.Count)
+                                        CallNext();
+                                });
+            
         }
 
-        private void CallNext()
+        public void CallNext()
         {
+            _canvas.gameObject.GetComponent<CanvasGroup>().alpha = 1;
             var dialog = _dialogs[_diglogIndex];
             _textTypeWriter.CallNextEffect(dialog.Context);
             _diglogIndex++;

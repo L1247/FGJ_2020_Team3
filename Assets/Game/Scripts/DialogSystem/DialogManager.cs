@@ -1,20 +1,15 @@
+using System;
 using UnityEngine;
 
 namespace FGJ2020_Team3.DialogSystem
 {
-    public class DialogManager
+    public class DialogManager : MonoBehaviour
     {
-        public static DialogManager Instance
+        public DialogSystem dialogSystemCharacter , DialogSystemWitch;
+        private void Start()
         {
-            get
-            {
-                if(_dialogManager == null)
-                    _dialogManager = new DialogManager();
-                return _dialogManager;
-            }
+            dialogSystemCharacter.CallNext();
         }
-
-        private static DialogManager _dialogManager;
 
         public void StartDialog()
         {
