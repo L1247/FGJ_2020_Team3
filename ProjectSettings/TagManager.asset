@@ -57,3 +57,6 @@ TagManager:
   - name: Text
     uniqueID: 3697858655
     locked: 0
+  - name: Animation
+    uniqueID: 820575489
+    locked: 0
