@@ -19,8 +19,9 @@ public class Dialog_index_GM : MonoBehaviour
 
     public AudioSource BGMAUDIO;
     
-    public float sec = 0f;
-    private bool dialog_start = false;
+    public  float  sec          = 0f;
+    private bool   dialog_start = false;
+    public string waitForLoadScene;
 
     // Start is called before the first frame update
 
@@ -57,12 +58,17 @@ public class Dialog_index_GM : MonoBehaviour
 
         if (sec>=12)
         {
-            SceneManager.LoadScene("");
+            LoadScene();
         }
     }
 
     public void SKIPBUTTON()
     {
-        SceneManager.LoadScene("");
+        LoadScene();
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene(waitForLoadScene);
     }
 }

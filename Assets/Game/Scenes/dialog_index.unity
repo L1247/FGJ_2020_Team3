@@ -1280,3 +1280,4 @@ MonoBehaviour:
   SKIPBUT: {fileID: 1358253531}
   BGMAUDIO: {fileID: 160665317}
   sec: 0
+  waitForLoadScene: dragonAnim_Dialog
