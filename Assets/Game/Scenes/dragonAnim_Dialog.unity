@@ -466,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogSystemCharacter: {fileID: 1720801503}
   DialogSystemWitch: {fileID: 162127410}
+  NextScene: dragonAnim_Battle
 --- !u!4 &330437494
 Transform:
   m_ObjectHideFlags: 0
