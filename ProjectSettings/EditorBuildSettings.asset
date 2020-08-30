@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/dragonAnim_Battle.unity
     guid: 43de209c6533b1446ab242abd6d60013
+  - enabled: 1
+    path: Assets/FinalExAni/FinalScene.unity
+    guid: 44bf298de8b7586458ce4bdf652cf1a1
   m_configObjects: {}
