@@ -5,6 +5,8 @@ using UnityEngine;
 public class FinalManager : MonoBehaviour
 {
     private bool canEsc;
+
+    [SerializeField] private GameObject NukeObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,12 @@ public class FinalManager : MonoBehaviour
     void EscEnable()
     {
         canEsc = true;
+        CallNukeAnimation();
+    }
+
+    private void CallNukeAnimation()
+    {
+        NukeObj.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
