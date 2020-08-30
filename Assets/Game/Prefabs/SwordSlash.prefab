@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 10000
   m_Sprite: {fileID: -7310501140982945409, guid: f3ce0d40f18449c4290535c7ddeb6ebf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9137255, g: 0.5686856, b: 0.44313726, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,12 +145,12 @@ MonoBehaviour:
   effect: 0
   amount: 87
   applyEffectOncePerEntity: 0
-  applyEffectOnce: 0
+  applyEffectOnce: 1
   applyContinuousEffect: 0
   continuousEffectTickRate: 0.5
   autoDeactivate: 0
   autoDeactivationTime: 0
-  deactivateOnEffect: 1
+  deactivateOnEffect: 0
   deactivateEffectTime: 0
   deactivateObjectTime: 0
   owner: {fileID: 0}
