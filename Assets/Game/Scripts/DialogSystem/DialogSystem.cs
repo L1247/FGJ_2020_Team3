@@ -22,7 +22,11 @@ namespace FGJ2020_Team3.DialogSystem
             _otherTextTypeWriter.GetTypeEnd
                                 .Subscribe(unit =>
                                 {
-                                    if(_diglogIndex < _dialogs.Count) CallNext();
+                                    if (_diglogIndex < _dialogs.Count)
+                                    {
+                                        Observable.Timer(TimeSpan.FromSeconds(0.7f))
+                                                  .Subscribe(l => CallNext());
+                                    }
                                 }).AddTo(gameObject);
 
         }
