@@ -1,3 +1,16 @@
-﻿{
-	"name": "DialogSystem"
+{
+    "name": "DialogSystem",
+    "references": [
+        "GUID:7b89af3a6390ade46be62ecab42d4d97",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

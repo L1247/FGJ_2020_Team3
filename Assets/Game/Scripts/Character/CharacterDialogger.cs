@@ -5,7 +5,7 @@ namespace FGJ2020_Team3.Character
 {
     public class CharacterDialogger : MonoBehaviour
     {
-        public DialogCharacter DialogCharacter;
+        // public DialogCharacter DialogCharacter;
         public void TriggerDialog()
         {
             

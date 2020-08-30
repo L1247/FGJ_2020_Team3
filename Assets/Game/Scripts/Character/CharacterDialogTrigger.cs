@@ -6,7 +6,7 @@ namespace FGJ2020_Team3.Character
 {
     public class CharacterDialogTrigger : MonoBehaviour
     {
-        public DialogCharacter DialogCharacter; 
+        // public DialogCharacter DialogCharacter; 
         private void OnTriggerEnter2D(Collider2D other)
         {
             var characterDialogger = other.GetComponent<CharacterDialogger>();

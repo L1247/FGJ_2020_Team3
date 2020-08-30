@@ -1,29 +1,40 @@
 using System;
 using System.Collections.Generic;
+using Game.Scripts.Utility.TextUtility;
+using UniRx;
 using UnityEngine;
 
 namespace FGJ2020_Team3.DialogSystem
 {
-    public class DialogSystem : UnityEngine.MonoBehaviour
+    public class DialogSystem : MonoBehaviour
     {
-        public int DialogID = 1;
-        
-        [SerializeField]
-        private List<Dialog> _dialogs;
+        [SerializeField] private List<Dialog>     _dialogs;
+        [SerializeField] private UITextTypeWriter _textTypeWriter;
+
+        private int _diglogIndex;
+
+        private void Start()
+        {
+            _textTypeWriter.GetTypeEnd
+                           .Subscribe(unit =>
+                           {
+                               if(_diglogIndex < _dialogs.Count)
+                                   CallNext();
+                           });
+            CallNext();
+        }
+
+        private void CallNext()
+        {
+            var dialog = _dialogs[_diglogIndex];
+            _textTypeWriter.CallNextEffect(dialog.Context);
+            _diglogIndex++;
+        }
     }
 
-    [System.Serializable]
+    [Serializable]
     internal class Dialog
     {
-        public DialogCharacter DialogCharacter;
-        [Multiline]
-        public string          Context;
-    }
-
-    public enum DialogCharacter
-    {
-        主角,
-        女巫,
-        龍
+        [Multiline] public string Context;
     }
 }
