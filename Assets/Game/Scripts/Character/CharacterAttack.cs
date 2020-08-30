@@ -13,11 +13,13 @@ namespace FGJ2020_Team3.Character
             Attacking
         }
 
-        private Transform             _transform;
-        private State                 state;
-        private MoveTransformVelocity _moveTransformVelocity;
-        private Character_Base        _characterBase;
-
+        private                  Transform             _transform;
+        private                  State                 state;
+        private                  MoveTransformVelocity _moveTransformVelocity;
+        private                  Character_Base        _characterBase;
+        [SerializeField] private AudioClip             _atkAudioClip;
+        [SerializeField] private AudioSource           _audioSource;
+        
         private void Awake()
         {
             SetStateNormal();
@@ -59,6 +61,7 @@ namespace FGJ2020_Team3.Character
             {
                 _characterBase.SetTrigger("Atk_Back");
             }
+            _audioSource.PlayOneShot(_atkAudioClip);
 
             swordSlashTransform.localScale = localScale;
         }

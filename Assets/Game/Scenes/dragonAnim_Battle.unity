@@ -2097,42 +2097,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 796853014, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: startingHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 91796825, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 891015357}
     - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2089051136}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 796853017, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
       propertyPath: camera
       value: 
