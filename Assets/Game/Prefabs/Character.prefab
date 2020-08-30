@@ -16,6 +16,11 @@ GameObject:
   - component: {fileID: 144573213}
   - component: {fileID: 91796825}
   - component: {fileID: 91796833}
+  - component: {fileID: 796853005}
+  - component: {fileID: 796853013}
+  - component: {fileID: 796853014}
+  - component: {fileID: 796853015}
+  - component: {fileID: 796853017}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -163,6 +168,169 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   IsUp: 0
+--- !u!114 &796853005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ee86ffc9ed3e54fbf45e0a6709b063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeConfigs:
+  - condition: 0
+    positionShakeIntensity: {x: 0.01, y: 0.01, z: 0.01}
+    rotationShakeIntensity: {x: 0, y: 0, z: 0}
+    shakeDuration: 0.1
+    filterTargetTag: 0
+    tags: []
+  - condition: 1
+    positionShakeIntensity: {x: 0.04, y: 0.04, z: 0.04}
+    rotationShakeIntensity: {x: 0, y: 0, z: 0}
+    shakeDuration: 0.2
+    filterTargetTag: 0
+    tags: []
+  camera: {fileID: 0}
+--- !u!114 &796853013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b922a36ad8d1e94d935adddf41b053c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTextPrefab: {fileID: 1094057107633852, guid: 9331eaaf77c7e0c46b1df5bad87e945b, type: 3}
+  collider: {fileID: 0}
+  collider2D: {fileID: 0}
+  is2DPopup: 1
+  textPopupConfigurations:
+  - ObtainHeightMethod: 1
+    Condition: 0
+    Color: {r: 0.8018868, g: 0, b: 0, a: 1}
+    HeightOffset: 0
+    FilterForObjectTags: 0
+    tags: []
+  - ObtainHeightMethod: 1
+    Condition: 1
+    Color: {r: 0.8018868, g: 0, b: 0, a: 1}
+    HeightOffset: 0
+    FilterForObjectTags: 0
+    tags: []
+--- !u!114 &796853014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b039f7860030d14e964f1647615f057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 100
+  startingHealth: 1
+  currentHealth: 0
+  clampHealth: 1
+  isAlive: 1
+  isInvulnerable: 0
+  reviveOnEnable: 1
+  cachedInterfaces:
+    Configure: []
+    Correction: []
+    Damage:
+    - {fileID: 796853005}
+    - {fileID: 796853013}
+    - {fileID: 796853017}
+    Healable:
+    - {fileID: 796853005}
+    - {fileID: 796853013}
+    - {fileID: 796853017}
+    Invulnerable: []
+    Killable:
+    - {fileID: 796853005}
+    - {fileID: 796853013}
+    - {fileID: 796853015}
+    - {fileID: 796853017}
+    Reviveable: []
+    Restore: []
+    DamageCallback:
+    - {fileID: 796853005}
+    - {fileID: 796853013}
+    - {fileID: 796853017}
+    HealCallback:
+    - {fileID: 796853005}
+    - {fileID: 796853013}
+    - {fileID: 796853017}
+  externalListeners: []
+  scanChildren: 1
+  scanSelf: 1
+  cachedListenerComponents:
+  - {fileID: 796853005}
+  - {fileID: 796853013}
+  - {fileID: 796853015}
+  - {fileID: 796853017}
+  totalListeners: 0
+--- !u!114 &796853015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970bdd4525e8c9c4e8537feebe9042a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6171777392326942239}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &796853017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ee86ffc9ed3e54fbf45e0a6709b063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeConfigs:
+  - condition: 0
+    positionShakeIntensity: {x: 0.35, y: 0.35, z: 0.35}
+    rotationShakeIntensity: {x: 0, y: 0, z: 0}
+    shakeDuration: 0.5
+    filterTargetTag: 0
+    tags: []
+  - condition: 1
+    positionShakeIntensity: {x: 3, y: 3, z: 3}
+    rotationShakeIntensity: {x: 0, y: 0, z: 0}
+    shakeDuration: 1
+    filterTargetTag: 0
+    tags: []
+  camera: {fileID: 0}
 --- !u!1 &6171777392579965693
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +401,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 263941485
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98aaca7ce8803734b804d39da61d5e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

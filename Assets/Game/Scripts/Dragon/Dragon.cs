@@ -19,7 +19,6 @@ public class Dragon : MonoBehaviour
 
     public void FireBallAfter()
     {
-        Debug.Log($"FrieBallAfter");
         _animator.SetTrigger("DragonFire");
     }
 }
