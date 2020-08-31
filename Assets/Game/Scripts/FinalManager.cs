@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class FinalManager : MonoBehaviour
 {
     private bool canEsc;
+    public GameObject back ;
 
     [SerializeField] private GameObject NukeObj;
     // Start is called before the first frame update
@@ -22,9 +24,14 @@ public class FinalManager : MonoBehaviour
     private void CallNukeAnimation()
     {
         NukeObj.gameObject.SetActive(true);
+        Invoke("OpenReturnbuttom",10f);
     }
-
-    // Update is called once per frame
+    void OpenReturnbuttom() {
+        back.SetActive(true);
+    }
+    public void BackScene() {
+        SceneManager.LoadScene(0);
+    }
     void Update()
     {
         if (canEsc && Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
