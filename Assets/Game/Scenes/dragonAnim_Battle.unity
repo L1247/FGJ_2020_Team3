@@ -2280,6 +2280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reloadSceneName: dragonAnim_Battle
   nextScene: FinalScene
+  _doesnotSeenOpeningAnimation: 1
   HideObjs:
   - {fileID: 307213788}
   - {fileID: 1075113428}
@@ -2584,6 +2585,22 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 891015357}
+    - target: {fileID: 144573208, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.60116935
+      objectReference: {fileID: 0}
+    - target: {fileID: 144573208, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7422881
+      objectReference: {fileID: 0}
+    - target: {fileID: 144573213, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5807071
+      objectReference: {fileID: 0}
+    - target: {fileID: 144573213, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7191191
+      objectReference: {fileID: 0}
     - target: {fileID: 796853015, guid: 1e49a84b48645504cb9bc1f3e8c33391, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

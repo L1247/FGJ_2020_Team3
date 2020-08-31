@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
@@ -21,23 +17,13 @@ public class Dialog_index_GM : MonoBehaviour
     
     public  float  sec          = 0f;
     private bool   dialog_start = false;
-    public string waitForLoadScene;
-
-    // Start is called before the first frame update
-
+    public string waitForLoadScene; 
     private void Awake()
     {
         dialog_start = true;
         SKIPBUT.SetActive(false);
         BGMAUDIO.Play();
-    }
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    } 
     void Update()
     {
         sec +=Time.deltaTime;
@@ -46,12 +32,12 @@ public class Dialog_index_GM : MonoBehaviour
             Front.Play();
         }
 
-        if (sec>=4)
+        if (sec>=7)
         {
             SKIPBUT.SetActive(true);
         }
 
-        if (sec>=9)
+        if (sec>=60)
         {
             fadeout.Play();
         }
@@ -60,13 +46,11 @@ public class Dialog_index_GM : MonoBehaviour
         {
             LoadScene();
         }
-    }
-
+    } 
     public void SKIPBUTTON()
     {
-        LoadScene();
-    }
-
+        SceneManager.LoadScene(waitForLoadScene);
+    } 
     private void LoadScene()
     {
         SceneManager.LoadScene(waitForLoadScene);
