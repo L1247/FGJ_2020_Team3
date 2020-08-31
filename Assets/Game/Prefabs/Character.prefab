@@ -271,7 +271,7 @@ MonoBehaviour:
     - {fileID: 796853013}
     - {fileID: 796853017}
   externalListeners: []
-  scanChildren: 1
+  scanChildren: 0
   scanSelf: 1
   cachedListenerComponents:
   - {fileID: 796853005}
@@ -426,7 +426,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &1461874938
 Animator:
   serializedVersion: 3
