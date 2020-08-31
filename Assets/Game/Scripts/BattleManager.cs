@@ -76,7 +76,6 @@ public class BattleManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Debug.Log($"Quit");
         _doesnotSeenOpeningAnimation = false;
     }
 }
