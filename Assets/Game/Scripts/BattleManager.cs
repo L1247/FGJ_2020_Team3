@@ -37,8 +37,9 @@ public class BattleManager : MonoBehaviour
 
     }
     public IEnumerator Fly2() {
-        print("wait to fly");
+        
         yield return new WaitForSeconds(15f); //打怪時間
+        print(" fly");
         Dragon.SetTrigger("Fly");
         yield return new WaitForSeconds(5f); //飛行
         Dragon2.SetActive(true);
