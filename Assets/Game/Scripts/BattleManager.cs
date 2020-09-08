@@ -8,14 +8,15 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField] private string       reloadSceneName;
     [SerializeField] private string       nextScene;
-    private static           bool         _doesnotSeenOpeningAnimation;
+    private static           bool         _doesnotSeenOpeningAnimation; //尚未看過入場動畫
     [SerializeField] private GameObject[] HideObjs;
     [SerializeField] private Animator     Witch ,   Opening , Dragon , Gem;
     [SerializeField] private GameObject   FakeGem , RealGem;
+    public GameObject Dragon2;
     
     private void Start()
     {
-        if (_doesnotSeenOpeningAnimation == false)
+        if (_doesnotSeenOpeningAnimation == false) //尚未撥放=F ---> 已經撥放過
         {
             foreach (var hideObj in HideObjs)
             {
@@ -27,8 +28,24 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-             CallDragonFallAnimation();
+             CallDragonFallAnimation(); // 龍下降動畫
+            
         }
+    }
+    public void DFlyAnimation() {   
+        StartCoroutine("Fly2");
+
+    }
+    public IEnumerator Fly2() {
+        print("wait to fly");
+        yield return new WaitForSeconds(15f); //打怪時間
+        Dragon.SetTrigger("Fly");
+        yield return new WaitForSeconds(5f); //飛行
+        Dragon2.SetActive(true);
+        yield return new WaitForSeconds(5.2f); //End 5.20 
+        Dragon2.SetActive(false);
+        Dragon.SetTrigger("Fall");
+        DFlyAnimation();
     }
 
     public void DelayCallLoadNextScene()
@@ -58,13 +75,14 @@ public class BattleManager : MonoBehaviour
         Opening.SetTrigger("Trigger");
     }
 
-    public void CallDragonFallAnimation()
+    public void CallDragonFallAnimation() 
     {
         RealGem.gameObject.SetActive(true);
         FakeGem.gameObject.SetActive(false);
         Dragon.gameObject.SetActive(true);
         Dragon.transform.position += Vector3.up * 10; 
         Dragon.SetTrigger("Fall");
+        DFlyAnimation();
     }
 
     public void CallGemAnimation()
