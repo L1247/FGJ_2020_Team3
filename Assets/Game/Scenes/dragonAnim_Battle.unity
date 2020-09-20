@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1775cfec294d848a94de7ebdd5e169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnCount: 5
+  defaultSpawnCount: 7
   animator: {fileID: 49988598}
   fireBallPrefab: {fileID: 7491736619676715354, guid: dea95224f86d49a48905848d432dad88, type: 3}
 --- !u!1 &128412118

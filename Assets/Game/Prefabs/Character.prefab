@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 796853014}
   - component: {fileID: 796853015}
   - component: {fileID: 796853017}
+  - component: {fileID: 657503717}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -250,6 +251,7 @@ MonoBehaviour:
     - {fileID: 796853005}
     - {fileID: 796853013}
     - {fileID: 796853017}
+    - {fileID: 657503717}
     Healable:
     - {fileID: 796853005}
     - {fileID: 796853013}
@@ -278,6 +280,7 @@ MonoBehaviour:
   - {fileID: 796853013}
   - {fileID: 796853015}
   - {fileID: 796853017}
+  - {fileID: 657503717}
   totalListeners: 0
 --- !u!114 &796853015
 MonoBehaviour:
@@ -344,6 +347,22 @@ MonoBehaviour:
     filterTargetTag: 0
     tags: []
   camera: {fileID: 0}
+--- !u!114 &657503717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171777392326942239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5c99a9b2736184fbfa58ae7829d463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 2
+  stepSize: 0.15
+  pushType: 2
+  MultiplyMovement: {x: 1, y: 1, z: 1}
 --- !u!1 &6171777392579965693
 GameObject:
   m_ObjectHideFlags: 0

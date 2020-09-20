@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2470130832215655228}
   - component: {fileID: 5345128751404052801}
   - component: {fileID: 8699353997323371246}
+  - component: {fileID: 6607208383787858711}
+  - component: {fileID: 291187378384846061}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -95,3 +97,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f846a5d98e1844bbb8d821248340e1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
+--- !u!58 &6607208383787858711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491736619676715354}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.39
+--- !u!114 &291187378384846061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491736619676715354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2482e47bf54ec44f9faf77d4fc679af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 0
+  amount: 5
+  applyEffectOncePerEntity: 1
+  applyEffectOnce: 1
+  applyContinuousEffect: 0
+  continuousEffectTickRate: 0.5
+  autoDeactivate: 1
+  autoDeactivationTime: 0
+  deactivateOnEffect: 1
+  deactivateEffectTime: 0
+  deactivateObjectTime: 0
+  owner: {fileID: 0}
+  affectOwner: 1
+  onlyAffectTags: 0
+  affectableTags: []

@@ -25,7 +25,6 @@ namespace Game.Scripts.Dragon
 
         public void SpawnFireBall()
         {
-            Debug.Log($"SpawnFireBall");
             spawnCount--;
             Instantiate(fireBallPrefab , transform.position,Quaternion.identity);
             if (spawnCount > 0) CallFireBallAnimation();

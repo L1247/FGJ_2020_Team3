@@ -1,3 +1,15 @@
-﻿{
-	"name": "Dragon"
+{
+    "name": "Dragon",
+    "references": [
+        "GUID:492beb12b61e6f44898667048c0f63db"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
