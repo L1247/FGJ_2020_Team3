@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts.Dragon;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class BattleManager : MonoBehaviour
 {
-    [SerializeField] private string       reloadSceneName;
-    [SerializeField] private string       nextScene;
-    private static           bool         _doesnotSeenOpeningAnimation; //尚未看過入場動畫
-    [SerializeField] private GameObject[] HideObjs;
-    [SerializeField] private Animator     Witch ,   Opening , Dragon , Gem;
-    [SerializeField] private GameObject   FakeGem , RealGem;
-    public                   GameObject   Dragon2;
+    [SerializeField] private string          reloadSceneName;
+    [SerializeField] private string          nextScene;
+    private static           bool            _doesnotSeenOpeningAnimation; //尚未看過入場動畫
+    [SerializeField] private GameObject[]    HideObjs;
+    [SerializeField] private Animator        Witch ,   Opening , Dragon , Gem;
+    [SerializeField] private GameObject      FakeGem , RealGem;
+    [SerializeField] private FireBallSpawner _fireBallSpawner;
+    public                   GameObject      Dragon2;
 
     private void Start()
     {
@@ -34,22 +37,49 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void DFlyAnimation()
+    public void CallNextActionStart()
     {
-        StartCoroutine("Fly2");
+        StartCoroutine("BossAction");
     }
 
-    public IEnumerator Fly2()
+    public IEnumerator BossAction()
     {
-        yield return new WaitForSeconds(15f); //打怪時間
-        print(" fly");
-        Dragon.SetTrigger("Fly");
-        yield return new WaitForSeconds(5f); //飛行
-        Dragon2.SetActive(true);
-        yield return new WaitForSeconds(5.2f); //End 5.20 
-        Dragon2.SetActive(false);
+        yield return new WaitForSeconds(5f); //打怪時間
+
+        var behaviour = Random.Range(0 , 3);
+        if (behaviour < 2)
+        {
+        #region Fire Ball action flow
+
+            var waitTime = _fireBallSpawner.Excute();
+            yield return new WaitForSeconds(waitTime); // 執行飛行
+
+        #endregion
+        }
+        else if (behaviour >= 2)
+        {
+        #region Fly actoin flow
+
+            Dragon.SetTrigger("Fly");
+            yield return new WaitForSeconds(5f); // 執行飛行
+            Dragon2.SetActive(true);
+            yield return new WaitForSeconds(5.2f); // 飛行結束End 5.20 
+            Dragon2.SetActive(false);
+            Dragon.SetTrigger("Fall");
+
+        #endregion
+        }
+        CallNextActionStart();
+    }
+
+    public void CallDragonFallAnimation()
+    {
+        RealGem.gameObject.SetActive(true);
+        FakeGem.gameObject.SetActive(false);
+        Dragon.gameObject.SetActive(true);
+        Dragon.transform.position += Vector3.up * 10;
         Dragon.SetTrigger("Fall");
-        DFlyAnimation();
+        CallNextActionStart();
     }
 
     public void DelayCallLoadNextScene()
@@ -77,16 +107,6 @@ public class BattleManager : MonoBehaviour
     {
         Witch.gameObject.SetActive(false);
         Opening.SetTrigger("Trigger");
-    }
-
-    public void CallDragonFallAnimation()
-    {
-        RealGem.gameObject.SetActive(true);
-        FakeGem.gameObject.SetActive(false);
-        Dragon.gameObject.SetActive(true);
-        Dragon.transform.position += Vector3.up * 10;
-        Dragon.SetTrigger("Fall");
-        DFlyAnimation();
     }
 
     public void CallGemAnimation()

@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 49988599}
   - component: {fileID: 49988598}
   - component: {fileID: 49988600}
+  - component: {fileID: 49988601}
   m_Layer: 0
   m_Name: FireballSpawner
   m_TagString: Untagged
@@ -380,6 +381,104 @@ MonoBehaviour:
   defaultSpawnCount: 7
   animator: {fileID: 49988598}
   fireBallPrefab: {fileID: 7491736619676715354, guid: dea95224f86d49a48905848d432dad88, type: 3}
+  _audioClip: {fileID: 8300000, guid: 2dff1703dbb4d2045bba88f0c976519a, type: 3}
+  _audioSource: {fileID: 49988601}
+--- !u!82 &49988601
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49988596}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &128412118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,19 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmount:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 49988598}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Fire
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &675278981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: 0
-  amount: 10
+  amount: 5
   applyEffectOncePerEntity: 0
   applyEffectOnce: 0
   applyContinuousEffect: 0
@@ -3795,7 +3882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1324797009
 Transform:
   m_ObjectHideFlags: 0
@@ -4284,6 +4371,7 @@ MonoBehaviour:
   Gem: {fileID: 1593726749}
   FakeGem: {fileID: 1593726748}
   RealGem: {fileID: 1864132126}
+  _fireBallSpawner: {fileID: 49988600}
   Dragon2: {fileID: 135308651}
 --- !u!4 &1347905400
 Transform:
@@ -5027,7 +5115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: 0
-  amount: 15
+  amount: 5
   applyEffectOncePerEntity: 1
   applyEffectOnce: 0
   applyContinuousEffect: 0
