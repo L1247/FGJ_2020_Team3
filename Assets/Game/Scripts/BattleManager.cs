@@ -19,8 +19,8 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        CallDragonFallAnimation(); // 龍下降動畫
-        return;
+        // CallDragonFallAnimation(); // 龍下降動畫
+        // return;
         if (_doesnotSeenOpeningAnimation == false) //尚未撥放=F ---> 已經撥放過
         {
             foreach (var hideObj in HideObjs)
@@ -114,6 +114,7 @@ public class BattleManager : MonoBehaviour
         RealGem.gameObject.SetActive(false);
         FakeGem.gameObject.SetActive(true);
         Gem.Play("Gem");
+        StopAllCoroutines();
     }
 
     private void OnApplicationQuit()
