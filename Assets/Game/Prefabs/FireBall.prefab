@@ -139,5 +139,6 @@ MonoBehaviour:
   deactivateObjectTime: 0
   owner: {fileID: 0}
   affectOwner: 1
-  onlyAffectTags: 0
-  affectableTags: []
+  onlyAffectTags: 1
+  affectableTags:
+  - Player
